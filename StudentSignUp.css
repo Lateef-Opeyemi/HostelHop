@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+  --primary_color: #006970;
+  --paragraph_text: #0b4f54;
+  --body: #F2F9F7;
+  --secondary:#49c5b2;
+  --tetiary:lightgray;
+}

@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+  --primary_color: #006970;
+  --paragraph_text: #0b4f54;
+  --body: #F2F9F7;
+  --secondary:#49c5b2;
+  --tetiary:lightgray;
+}
+.h5_text{
+    color: var(--paragraph_text);
+}
+.icon i{
+   width: 80px;
+   height: 80px;
+   background-color: #e8fbf7;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+
+}
+.brand-icon{
+   font-size: 40px;
+}
+.student_card{
+
+border-radius: 20px;
+
+}
+.landlord-card{
+    border-radius: 20px;
+}

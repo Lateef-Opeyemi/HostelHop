@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Manager Dashboard</title>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <style>
+
+        body{
+            background:#f8fafc;
+        }
+
+        .welcome-card{
+            background:#E8FBF7;
+            border-radius:20px;
+        }
+
+        .hostel-card{
+            border-radius:20px;
+        }
+
+        .section-title{
+            color:#006970;
+        }
+
+        .btn-main{
+            background:#49c5b2;
+            border:none;
+            color:white;
+        }
+
+        .btn-main:hover{
+            background:#39b3a1;
+            color:white;
+        }
+
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+
+    <div class="container">
+
+        <a href="#" class="navbar-brand fw-bold">
+            Hostel<span style="color:#49c5b2;">Hop</span>
+        </a>
+
+        <button
+        class="navbar-toggler"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navMenu">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a href="./PMdashboard.html" class="nav-link">
+                        Dashboard
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="./PMSignUp.html" class="nav-link">
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="container mt-4">
+
+    <div class="card border-0 shadow-sm welcome-card">
+
+        <div class="card-body p-4">
+
+            <h3 class="fw-bold">
+                Hello Property Manager 
+            </h3>
+
+            <p class="text-muted">
+                Add and manage hostel listings for students.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+
+    <h3 class="fw-bold section-title mb-4">
+        Add New Hostel
+    </h3>
+
+    <form id="hostelForm">
+
+        <div class="row">
+
+            <div class="col-md-6  mb-3">
+
+                <label class="form-label">
+                    Hostel Name
+                </label>
+
+                <input
+                type="text"
+                class="form-control"
+                id="hostelName">
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label class="form-label">
+                    University
+                </label>
+
+                <input
+                type="text"
+                class="form-control"
+                id="university">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+
+                <label class="form-label">
+                    Location
+                </label>
+
+                <input
+                type="text"
+                class="form-control"
+                id="location">
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label class="form-label">
+                    Price
+                </label>
+
+                <input
+                type="text"
+                class="form-control"
+                id="price">
+
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Room Type
+            </label>
+
+            <select
+            class="form-select"
+            id="roomType">
+
+                <option>Self Contain</option>
+                <option>Room and parlour self contain</option>
+                <option>2 Bedroom Room</option>
+            </select>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Description
+            </label>
+
+            <textarea
+            rows="5"
+            class="form-control"
+            id="description"></textarea>
+
+        </div>
+<div class="mb-3">
+  <label class="form-label">WhatsApp Number (e.g 2348033334444)</label>
+  <input type="text" id="landlordPhone" class="form-control" placeholder="Enter number with country code" required />
+</div>
+<div class="mb-4">
+
+
+<label class="form-label">
+    Upload Hostel Images
+</label>
+<div class="mb-3">
+  <label>Image 1</label>
+  <input type="file" id="img1" accept="image/*" required>
+</div>
+
+<div class="mb-3">
+  <label>Image 2</label>
+  <input type="file" id="img2" accept="image/*" required>
+</div>
+
+<div class="mb-3">
+  <label>Image 3</label>
+  <input type="file" id="img3" accept="image/*" required>
+</div>
+        <button
+        type="submit"
+        class="btn btn-main">
+
+            Add Hostel
+
+        </button>
+
+    </form>
+
+</div>
+
+
+<div class="container mt-5 mb-5">
+
+    <h3 class="fw-bold section-title mb-4">
+        My Uploaded Hostels
+    </h3>
+
+    <div
+    class="row g-4"
+    id="myHostels">
+       <div class="col-12">
+            <div class="card hostel-card shadow-sm border-0">
+                <div class="card-body">
+                    No Hostels Uploaded Yet
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./script.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+
+</body>
+</html>

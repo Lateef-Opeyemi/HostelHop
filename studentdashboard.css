@@ -1,0 +1,20 @@
+.welcome-card{
+    background:#E8FBF7;
+    border-radius:20px;
+}
+.hostel-card{
+    border-radius:20px;
+    transition:.3s ease;
+}
+
+.hostel-card:hover{
+    transform:translateY(-8px);
+}
+
+.card{
+    border-radius:20px;
+}
+
+.card-body{
+    padding:1.5rem;
+}

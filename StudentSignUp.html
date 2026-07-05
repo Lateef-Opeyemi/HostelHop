@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Auth - HostelHop</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+</head>
+<body class="bg-light">
+
+<div class="container mt-5" style="max-width: 520px;">
+
+  <h3 class="text-center fw-bold mb-4" style="color:#006970;">
+    Hostel<span style="color:#49c5b2;">Hop</span>
+  </h3>
+
+  <ul class="nav nav-tabs justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active fw-medium" data-bs-toggle="tab" href="#student-login" style="color:#006970;">
+        Login
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fw-medium" data-bs-toggle="tab" href="#student-signup" style="color:#49c5b2;">
+        Signup
+      </a>
+    </li>
+  </ul>
+
+  <div class="tab-content border bg-white p-4 shadow-sm">
+
+    <div class="tab-pane fade show active" id="student-login">
+      <form id="loginForm">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" placeholder="Enter your name" id="loginName" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn w-100 text-white" style="background:#006970;">
+           Login
+        </button>
+      </form>
+    </div>
+
+    <div class="tab-pane fade" id="student-signup">
+      <form id="signupForm">
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="signupName" placeholder="Enter full name" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="signupEmail" placeholder="Enter email" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" id="signupPassword" class="form-control" placeholder="Create password" required>
+        </div>
+        <button type="submit" class="btn w-100 text-white" style="background:#49c5b2;">
+          Create Account
+        </button> 
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<script src="./js/bootstrap.min.js"></script>
+<script src="./studentsignup.js"></script>
+</body>
+</html>
+

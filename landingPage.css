@@ -1,0 +1,115 @@
+:root {
+  --primary_color: #006970;
+  --paragraph_text: #0b4f54;
+  --body: #F2F9F7;
+  --secondary:#49c5b2;
+  --tetiary:lightgray;
+}
+.nav-link:hover {
+  color: var(--paragraph_text);
+  text-decoration: underline;
+
+}
+
+@media (max-width: 480px) {
+  .nav-link:hover {
+    text-decoration: none;
+  }
+ 
+}
+.text-center {
+    color: var(--primary_color);
+}
+.studentbtn{
+    background-color: var(--primary_color);
+    color: var(--body);
+    border-radius: 1.5rem;
+}
+
+.studentbtn:hover{
+    color: var(--paragraph_text);
+    background-color:var(--secondary) ;
+    
+}
+.start-btn{
+  background-color: var(--paragraph_text);
+  color: var(--body);
+  box-shadow: 0 8px 20px rgba(0, 105, 112, 0.25);
+ 
+}
+.start-btn:hover{
+  background-color: var(--secondary);
+  color: var(--body);
+
+}
+.list-btn{
+  background-color: var(--secondary);
+
+
+}
+.list-btn:hover{
+    background-color: var(--paragraph_text);
+  color: var(--body);
+  border: 2px solid var(--primary_color);
+}
+
+.h5text{
+  color: var(--primary_color);
+  font-weight: bold;
+  font-size: 2rem;
+}
+.ptext{
+  color: var(--paragraph_text);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.contact_text{
+  width: 40%;
+   color: var(--paragraph_text);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.contact_head{
+    color: var(--primary_color);
+  font-weight: bold;
+  font-size: 2rem;
+}
+.contactbtn{
+  border-radius: 1rem;
+  padding: 0.5rem 4rem;
+border: 2px solid var(--secondary);
+color: var(--primary_color);
+}
+.contactbtn:hover{
+  background-color: var(--primary_color);
+  color: var(--secondary);
+}
+.card_text{
+  color: var(--paragraph_text);
+}
+.card_text a{
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+
+.step-img {
+  transition: 0.4s ease;
+}
+
+.step-img:hover {
+  transform: translateY(-8px) scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
