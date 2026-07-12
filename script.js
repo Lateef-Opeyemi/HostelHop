@@ -1,4 +1,4 @@
- //localstorage.clear(); 
+//  localstorage.clear(); 
 
 const hostelForm = document.getElementById("hostelForm");
 const currentPm = localStorage.getItem("currentPm"); 
@@ -76,7 +76,7 @@ function saveHostel(img1, img2, img3) {
 
 function displayHostels() {
   const myHostels = document.getElementById("myHostels");
-  const hostels = JSON.parse(localStorage.getItem("hostels")) ;
+  const hostels = JSON.parse(localStorage.getItem("hostels")) || [];
   myHostels.innerHTML = "";
 
   const myOwnHostels = hostels.filter(h => h.owner === currentPm);
@@ -99,4 +99,5 @@ function displayHostels() {
   });
 }
 displayHostels();
+// localStorage.removeItem("hostels");
 //  localStorage.removeItem("currentPm"); 

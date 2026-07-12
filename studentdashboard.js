@@ -2,7 +2,7 @@
 const name = localStorage.getItem("studentname") 
 document.getElementById("welcometext").innerHTML = `Hello, ${name}`;
 const hostelcontainer = document.getElementById("hostelcontainer");
-const hostels = JSON.parse(localStorage.getItem("hostels")) ;
+const hostels = JSON.parse(localStorage.getItem("hostels")) || [];
 hostelcontainer.innerHTML = "";
 
 for (let i = 0; i < hostels.length; i++) {
