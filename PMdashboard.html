@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Property Manager Dashboard</title>
 
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 
     <style>
 
-        body{
-            background:#f8fafc;
+        body {
+            background: #f8fafc;
         }
 
-        .welcome-card{
-            background:#E8FBF7;
-            border-radius:20px;
+        .welcome-card {
+            background: #E8FBF7;
+            border-radius: 20px;
         }
 
-        .hostel-card{
-            border-radius:20px;
+        .hostel-card {
+            border-radius: 20px;
         }
 
-        .section-title{
-            color:#006970;
+        .section-title {
+            color: #006970;
         }
 
-        .btn-main{
-            background:#49c5b2;
-            border:none;
-            color:white;
+        .btn-main {
+            background: #49c5b2;
+            border: none;
+            color: white;
         }
 
-        .btn-main:hover{
-            background:#39b3a1;
-            color:white;
+        .btn-main:hover {
+            background: #39b3a1;
+            color: white;
         }
 
     </style>
 
 </head>
+
 <body>
+
+
+<!-- NAVBAR -->
+
 <nav class="navbar navbar-expand-lg bg-white shadow-sm">
 
     <div class="container">
@@ -50,17 +57,17 @@
         </a>
 
         <button
-        class="navbar-toggler"
-        data-bs-toggle="collapse"
-        data-bs-target="#navMenu">
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu">
 
             <span class="navbar-toggler-icon"></span>
 
         </button>
 
         <div
-        class="collapse navbar-collapse justify-content-end"
-        id="navMenu">
+            class="collapse navbar-collapse justify-content-end"
+            id="navMenu">
 
             <ul class="navbar-nav">
 
@@ -71,7 +78,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="./PMSignUp.html" class="nav-link">
+                    <a href="./PMSignUp.html" class="nav-link" onclick="logout()">
                         Logout
                     </a>
                 </li>
@@ -84,44 +91,58 @@
 
 </nav>
 
+
+<!-- WELCOME -->
+
 <div class="container mt-4">
 
     <div class="card border-0 shadow-sm welcome-card">
 
         <div class="card-body p-4">
 
-            <h3 class="fw-bold">
-                Hello Property Manager 
+            <h3 class="fw-bold" id="welcomepm">
+                Hello
             </h3>
 
             <p class="text-muted">
                 Add and manage hostel listings for students.
             </p>
+
         </div>
+
     </div>
+
 </div>
+
+
+<!-- ADD / UPDATE HOSTEL -->
+
 <div class="container mt-5">
 
-    <h3 class="fw-bold section-title mb-4">
+    <h3 class="fw-bold section-title mb-4" id="formTitle">
         Add New Hostel
     </h3>
 
+
     <form id="hostelForm">
+
 
         <div class="row">
 
-            <div class="col-md-6  mb-3">
+            <div class="col-md-6 mb-3">
 
                 <label class="form-label">
                     Hostel Name
                 </label>
 
                 <input
-                type="text"
-                class="form-control"
-                id="hostelName">
+                    type="text"
+                    class="form-control"
+                    id="hostelName"
+                    required>
 
             </div>
+
 
             <div class="col-md-6 mb-3">
 
@@ -130,13 +151,15 @@
                 </label>
 
                 <input
-                type="text"
-                class="form-control"
-                id="university">
+                    type="text"
+                    class="form-control"
+                    id="university"
+                    required>
 
             </div>
 
         </div>
+
 
         <div class="row">
 
@@ -147,11 +170,13 @@
                 </label>
 
                 <input
-                type="text"
-                class="form-control"
-                id="location">
+                    type="text"
+                    class="form-control"
+                    id="location"
+                    required>
 
             </div>
+
 
             <div class="col-md-6 mb-3">
 
@@ -160,13 +185,15 @@
                 </label>
 
                 <input
-                type="text"
-                class="form-control"
-                id="price">
+                    type="number"
+                    class="form-control"
+                    id="price"
+                    required>
 
             </div>
 
         </div>
+
 
         <div class="mb-3">
 
@@ -175,15 +202,28 @@
             </label>
 
             <select
-            class="form-select"
-            id="roomType">
+                class="form-select"
+                id="roomType"
+                required>
 
-                <option>Self Contain</option>
-                <option>Room and parlour self contain</option>
-                <option>2 Bedroom Room</option>
+                <option value="">Select room type</option>
+
+                <option value="self contain">
+                    Self Contain
+                </option>
+
+                <option value="room and parlour">
+                    Room and Parlour
+                </option>
+
+                <option value="2 bedroom">
+                    2 Bedroom
+                </option>
+
             </select>
 
         </div>
+
 
         <div class="mb-3">
 
@@ -192,47 +232,101 @@
             </label>
 
             <textarea
-            rows="5"
-            class="form-control"
-            id="description"></textarea>
+                rows="5"
+                class="form-control"
+                id="description"
+                required></textarea>
 
         </div>
-<div class="mb-3">
-  <label class="form-label">WhatsApp Number (e.g 2348033334444)</label>
-  <input type="text" id="landlordPhone" class="form-control" placeholder="Enter number with country code" required />
-</div>
-<div class="mb-4">
 
 
-<label class="form-label">
-    Upload Hostel Images
-</label>
-<div class="mb-3">
-  <label>Image 1</label>
-  <input type="file" id="img1" accept="image/*" required>
-</div>
+        <!-- IMAGES -->
 
-<div class="mb-3">
-  <label>Image 2</label>
-  <input type="file" id="img2" accept="image/*" required>
-</div>
+        <div class="mb-4">
 
-<div class="mb-3">
-  <label>Image 3</label>
-  <input type="file" id="img3" accept="image/*" required>
-</div>
+            <label class="form-label fw-bold">
+                Upload Hostel Images
+            </label>
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Image 1
+                </label>
+
+                <input
+                    type="file"
+                    id="img1"
+                    accept="image/*"
+                    class="form-control"
+                    required>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Image 2
+                </label>
+
+                <input
+                    type="file"
+                    id="img2"
+                    accept="image/*"
+                    class="form-control"
+                    required>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Image 3
+                </label>
+
+                <input
+                    type="file"
+                    id="img3"
+                    accept="image/*"
+                    class="form-control"
+                    required>
+
+            </div>
+
+        </div>
+
+
         <button
-        type="submit"
-        class="btn btn-main">
+            type="submit"
+            class="btn btn-main"
+            id="submitButton">
 
             Add Hostel
 
         </button>
 
+
+        <button
+            type="button"
+            class="btn btn-secondary ms-2"
+            id="cancelEditButton"
+            style="display:none;"
+            onclick="cancelEdit()">
+
+            Cancel Edit
+
+        </button>
+
+
     </form>
 
 </div>
 
+
+
+<!-- MY HOSTELS -->
 
 <div class="container mt-5 mb-5">
 
@@ -240,21 +334,31 @@
         My Uploaded Hostels
     </h3>
 
+
     <div
-    class="row g-4"
-    id="myHostels">
-       <div class="col-12">
+        class="row g-4"
+        id="myHostels">
+
+        <div class="col-12">
+
             <div class="card hostel-card shadow-sm border-0">
+
                 <div class="card-body">
-                    No Hostels Uploaded Yet
+                    Loading hostels...
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
+
 
 <script src="./script.js"></script>
 <script src="./js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

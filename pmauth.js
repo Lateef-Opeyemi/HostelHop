@@ -1,41 +1,97 @@
+const API_URL = "https://hostelhop-backend.onrender.com/";
 const pmSignupForm = document.getElementById("pmSignupForm");
+
 if (pmSignupForm) {
-    pmSignupForm.addEventListener("submit", function(e) {
+    pmSignupForm.addEventListener("submit", async function (e) {
         e.preventDefault();
+
         const name = document.getElementById("signupName").value.trim();
         const email = document.getElementById("signupEmail").value.trim();
         const phone = document.getElementById("signupPhone").value.trim();
-        const password = document.getElementById("signupPassword").value.trim();
-        const confirmPassword = document.getElementById("signupConfirmPassword").value.trim();
-        if (password !== confirmPassword) {
-            alert("Passwords do not match!");
-            return;
-        }
-        localStorage.setItem("pmEmail", email);
-        localStorage.setItem("pmPassword", password);
-        localStorage.setItem("pmName", name); 
-        alert("Property Manager account created successfully!");
+        const password = document.getElementById("signupPassword").value;
 
-localStorage.setItem("currentPm", email);
-        window.location.href = "PMdashboard.html"; 
+        try {
+            const response = await fetch(`${API_URL}/users/signup`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    phonenumber: phone,
+                    password: password,
+                    role: "landlord"
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                alert(data.detail || "Signup failed");
+                return;
+            }
+
+            alert("Property Manager account created successfully!");
+
+            localStorage.setItem("pmName", name);
+
+            window.location.href = "PMSignup.html";
+
+        } catch (error) {
+            console.error(error);
+            alert("Unable to connect to the server.");
+        }
     });
 }
+
+
 const pmLoginForm = document.getElementById("pmLoginForm");
 
 if (pmLoginForm) {
-    pmLoginForm.addEventListener("submit", function(e) {
-        e.preventDefault(); 
+    pmLoginForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
         const email = document.getElementById("loginEmail").value.trim();
-        const password = document.getElementById("loginPassword").value.trim();
-        const savedEmail = localStorage.getItem("pmEmail");
-        const savedPassword = localStorage.getItem("pmPassword");
-        if (email === savedEmail && password === savedPassword) {
+        const password = document.getElementById("loginPassword").value;
+
+        try {
+            const response = await fetch(`${API_URL}/users/signin`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nameOremail: email,
+                    password: password
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                alert(data.detail || "Invalid email or password");
+                return;
+            }
+            localStorage.setItem(
+                "accessToken",
+                data.token.accesstoken
+            );
+
+            localStorage.setItem(
+                "refreshToken",
+                data.token.refreshtoken
+            );
+
+            localStorage.setItem("currentPm", email);
+
             alert("Login successful!");
-        
-localStorage.setItem("currentPm", email);
+
             window.location.href = "PMdashboard.html";
-        } else {
-            alert("Invalid email or password. Please check details or signup first.");
+
+        } catch (error) {
+            console.error(error);
+            alert("Unable to connect to the server.");
         }
     });
 }

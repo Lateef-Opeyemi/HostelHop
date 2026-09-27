@@ -16,7 +16,7 @@
     text-decoration: none;
   }
  
-}
+}     
 .text-center {
     color: var(--primary_color);
 }
@@ -102,14 +102,3 @@ color: var(--primary_color);
 .step-img:hover {
   transform: translateY(-8px) scale(1.1);
 }
-
-
-
-
-
-
-
-
-
-
-
