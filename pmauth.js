@@ -1,4 +1,4 @@
-const API_URL = "https://hostelhop-backend.onrender.com/";
+const API_URL = "https://hostelhop-backend.onrender.com";
 const pmSignupForm = document.getElementById("pmSignupForm");
 
 if (pmSignupForm) {

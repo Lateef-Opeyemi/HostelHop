@@ -1,4 +1,4 @@
-const API_URL = "https://hostelhop-backend.onrender.com/";
+const API_URL = "https://hostelhop-backend.onrender.com";
 const hostelForm = document.getElementById("hostelForm");
 const myHostels = document.getElementById("myHostels");
 const formTitle = document.getElementById("formTitle");

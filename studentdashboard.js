@@ -1,4 +1,4 @@
-const API_URL = "https://hostelhop-backend.onrender.com/";
+const API_URL = "https://hostelhop-backend.onrender.com";
 const name = localStorage.getItem("studentname");
 const welcometext = document.getElementById("welcometext");
 const hostelcontainer = document.getElementById("hostelcontainer");
