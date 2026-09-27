@@ -36,7 +36,7 @@ if (pmSignupForm) {
 
             localStorage.setItem("pmName", name);
 
-            window.location.href = "PMSignup.html";
+            window.location.href = "PMSignUp.html";
 
         } catch (error) {
             console.error(error);
